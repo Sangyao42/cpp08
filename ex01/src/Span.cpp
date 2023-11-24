@@ -6,11 +6,12 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:12:59 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 20:27:15 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/24 21:18:57 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <cmath>
 
 Span::Span() : _N(0)
 {}
@@ -65,31 +66,25 @@ void	Span::fillSpan(int *intArray, size_t arraySize)
 		this->_array.insert(intArray, intArray + (this->_N - this->_array.size()));
 }
 
-unsigned int	Span::shortestSpan(void)
+int	Span::shortestSpan(void)
 {
 	if (this->_array.size() < 2)
 		throw Span::SpanNotFoundException();
-	double shortest = UINT_MAX;
+	int shortest = std::numeric_limits<int>::max();
 	std::multiset<int>::iterator it = this->_array.begin();
 	while (it != std::prev(this->_array.end()))
 	{
-		std::multiset<int>::iterator it2 = std::next(this->_array.begin());
-		while (it2 != this->_array.end())
-		{
-			if (abs(*it2 - *it) < shortest && it != it2)
-				shortest = abs(*it - *it2);
-			it2++;
-		}
+		shortest = std::min(shortest, std::abs(*it - *std::next(it)));
 		it++;
 	}
 	return (shortest);
 }
 
-unsigned int	Span::longestSpan(void)
+int	Span::longestSpan(void)
 {
 	if (this->_array.size() < 2)
 		throw Span::SpanNotFoundException();
-	return (abs(*this->_array.begin() - *std::prev(this->_array.end())));
+	return (std::abs(*this->_array.begin() - *std::prev(this->_array.end())));
 }
 
 //exceptions

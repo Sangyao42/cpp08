@@ -6,12 +6,13 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:13:07 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 19:46:35 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/24 21:19:05 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <set>
+#include <algorithm>
 #include <iostream>
 
 class Span
@@ -29,8 +30,8 @@ class Span
 		//members functions
 		void			addNumber(int num);
 		void			fillSpan(int *intArray, size_t arraySize);
-		unsigned int	shortestSpan(void);
-		unsigned int	longestSpan(void);
+		int	shortestSpan(void);
+		int	longestSpan(void);
 
 		//exceptions
 		class SpanIsFullException : public std::exception
