@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:12:59 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 21:18:57 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/04 13:20:32 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,22 @@ void	Span::addNumber(int num)
 		throw Span::SpanIsFullException();
 }
 
-void	Span::fillSpan(int *intArray, size_t arraySize)
-{
-	if (this->_array.size() + arraySize <= this->_N)
-		this->_array.insert(intArray, intArray + arraySize);
-	else
-		this->_array.insert(intArray, intArray + (this->_N - this->_array.size()));
-}
+// void	Span::fillSpan(int *intArray, size_t arraySize)
+// {
+// 	if (this->_array.size() + arraySize <= this->_N)
+// 		this->_array.insert(intArray, intArray + arraySize);
+// 	else
+// 		this->_array.insert(intArray, intArray + (this->_N - this->_array.size()));
+// }
+
+// void	Span::fillSpan(int *begin, int *end)
+// {
+// 	if (this->_array.size() + std::distance(begin, end) <= this->_N)
+// 		this->_array.insert(begin, end);
+// 	else
+// 		// throw Span::SpanIsFullException();
+// 		this->_array.insert(begin, begin + (this->_N - this->_array.size()));
+// }
 
 int	Span::shortestSpan(void)
 {
@@ -72,11 +81,11 @@ int	Span::shortestSpan(void)
 		throw Span::SpanNotFoundException();
 	int shortest = std::numeric_limits<int>::max();
 	std::multiset<int>::iterator it = this->_array.begin();
-	while (it != std::prev(this->_array.end()))
+	while (it != --this->_array.end())
 	{
-		shortest = std::min(shortest, std::abs(*it - *std::next(it)));
-		it++;
+		shortest = std::min(shortest, std::abs(*it - *(++it)));
 	}
+
 	return (shortest);
 }
 
@@ -84,7 +93,10 @@ int	Span::longestSpan(void)
 {
 	if (this->_array.size() < 2)
 		throw Span::SpanNotFoundException();
-	return (std::abs(*this->_array.begin() - *std::prev(this->_array.end())));
+	std::multiset<int>::iterator itFirstElem = this->_array.begin();
+	std::multiset<int>::iterator itLastElem = --this->_array.end();
+	return (std::abs(*itLastElem - *itFirstElem));
+	// return (std::abs(*this->_array.begin() - *std::prev(this->_array.end())));
 }
 
 //exceptions

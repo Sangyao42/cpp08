@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:13:07 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 21:19:05 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/04 13:20:15 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,19 @@ class Span
 		std::multiset<int>	getArray(void) const;
 
 		//members functions
-		void			addNumber(int num);
-		void			fillSpan(int *intArray, size_t arraySize);
-		int	shortestSpan(void);
-		int	longestSpan(void);
+		void	addNumber(int num);
+		// void			fillSpan(int *intArray, size_t arraySize);
+		template <typename TIt>
+		void	fillSpan(TIt begin, TIt end)
+		{
+			if (this->_array.size() + std::distance(begin, end) <= this->_N)
+				this->_array.insert(begin, end);
+			else
+				// throw Span::SpanIsFullException();
+				this->_array.insert(begin, begin + (this->_N - this->_array.size()));
+		}
+		int		shortestSpan(void);
+		int		longestSpan(void);
 
 		//exceptions
 		class SpanIsFullException : public std::exception
