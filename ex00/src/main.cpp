@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:56:21 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 17:08:00 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 14:58:33 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int main(void)
 	std::cout << "original array: " << std::endl;
 	for (it = array.begin(); it != array.end(); it++)
 		std::cout << *it << ' ';
+	std::cout << std::endl;
 	int num1 = 3;
 	int num2 = 12;
 
 	try
 	{
-		std::cout << "found number " << num1 << " at index " << ::easyfind(array, num1) << std::endl;
+		std::cout << "found number " << num1 << " at index: " << easyfind(array, num1) << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -37,7 +38,7 @@ int main(void)
 	}
 	try
 	{
-		std::cout << "found number " << num1 << " at index " << ::easyfind(array, num2) << std::endl;
+		std::cout << "found number " << num1 << " at index: " << easyfind(array, num2) << std::endl;
 	}
 	catch (std::exception &e)
 	{

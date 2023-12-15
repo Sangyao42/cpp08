@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:37:01 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/24 17:06:41 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 14:59:29 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 template <typename T>
 unsigned int easyfind(const T array, int num)
 {
-	std::vector<int>::const_iterator it;
+	// std::vector<int>::const_iterator it;
+	typename T::const_iterator it;
 	it = std::find(array.begin(), array.end(), num);
 	if (it == array.end())
-		throw std::exception();
+		throw std::runtime_error("Given number not found in array");
 	else
 		return (std::distance(array.begin(), it));
 }
