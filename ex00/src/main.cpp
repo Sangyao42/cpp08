@@ -6,19 +6,23 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:56:21 by sawang            #+#    #+#             */
-/*   Updated: 2023/12/15 14:58:33 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 15:10:45 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <iostream>
+#include <vector>
+#include <list>
 
 int main(void)
 {
 	std::vector<int> array;
+	// std::list<int> array;
 	for (int i = 0; i < 10; i++)
 		array.push_back(i);
 	std::vector<int>::iterator it;
+	// std::list<int>::iterator it;
 	it = std::find(array.begin(), array.end(), 3);
 	array.insert(it , 8);
 	std::cout << "original array: " << std::endl;

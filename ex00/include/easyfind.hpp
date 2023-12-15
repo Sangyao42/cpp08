@@ -6,12 +6,11 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:37:01 by sawang            #+#    #+#             */
-/*   Updated: 2023/12/15 14:59:29 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 15:10:10 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <vector>
 #include <algorithm>
 #include <iterator>
 #include <iostream>
