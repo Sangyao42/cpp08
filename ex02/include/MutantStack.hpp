@@ -6,15 +6,16 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 22:54:20 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/25 18:19:01 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 15:49:41 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <stack>
+#include <deque>
 #include <iterator>
 
-template <class T, class Container>
+template <class T, class Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
 	public:
