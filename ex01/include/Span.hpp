@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:13:07 by sawang            #+#    #+#             */
-/*   Updated: 2023/12/04 13:20:15 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/15 15:02:08 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Span
 
 		//members functions
 		void	addNumber(int num);
-		// void			fillSpan(int *intArray, size_t arraySize);
 		template <typename TIt>
 		void	fillSpan(TIt begin, TIt end)
 		{
