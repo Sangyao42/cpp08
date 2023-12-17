@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:33:51 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/25 18:21:02 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/17 22:15:35 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ int main(void)
 	mstack3.push(1);
 	mstack3.push(2);
 	mstack3.push(3);
-	mstack.swap(mstack3);
-	std::cout << "mstack  after swap" << std::endl;
-	std::cout << "after swap" << std::endl;
-	std::cout << "size: " << mstack.size() << std::endl;
-	std::cout << "top: " << mstack.top() << std::endl;
+	// mstack.swap(mstack3);
+	// std::cout << "mstack  after swap" << std::endl;
+	// std::cout << "after swap" << std::endl;
+	// std::cout << "size: " << mstack.size() << std::endl;
+	// std::cout << "top: " << mstack.top() << std::endl;
 
 	std::cout << "mstack interator:" << std::endl;
 	MutantStack<int, std::deque<int> >::iterator it = mstack.begin();
