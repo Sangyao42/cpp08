@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:30:46 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/25 18:19:10 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/17 22:16:48 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,24 +72,24 @@ typename MutantStack<T, Container>::reverse_iterator MutantStack<T, Container>::
 template <class T, class Container>
 typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::cbegin() const
 {
-	return (this->c.cbegin());
+	return (this->c.begin());
 }
 
 template <class T, class Container>
 typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::cend() const
 {
-	return (this->c.cend());
+	return (this->c.end());
 }
 
 //const_reverse_iterator
 template <class T, class Container>
 typename MutantStack<T, Container>::const_reverse_iterator MutantStack<T, Container>::crbegin() const
 {
-	return (this->c.crbegin());
+	return (this->c.rbegin());
 }
 
 template <class T, class Container>
 typename MutantStack<T, Container>::const_reverse_iterator MutantStack<T, Container>::crend() const
 {
-	return (this->c.crend());
+	return (this->c.rend());
 }
